@@ -25,7 +25,7 @@ export class UserRegistrationService {
   }
 
 // Log in
-login(userDetails: any): Observable<any> {
+userLoginService(userDetails: any): Observable<any> {
   console.log(userDetails)
   return this.http.post(apiUrl + "login" + new URLSearchParams(userDetails), {}).pipe(
     catchError(this.handleError)
@@ -33,7 +33,7 @@ login(userDetails: any): Observable<any> {
 };
 
 // Gets all movies
-  getAllMovies(): Observable<any> {
+  getAllMoviesService(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {
       headers: new HttpHeaders({
@@ -46,7 +46,7 @@ login(userDetails: any): Observable<any> {
   }
 
   // Get one movie
-  getMovie(title: string): Observable<any> {
+  getMovieService(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + `movies/${title}`, {
       headers: new HttpHeaders({
@@ -58,7 +58,7 @@ login(userDetails: any): Observable<any> {
     );
   }
   // Get director
-  getDirector(director: string): Observable<any> {
+  getDirectorService(director: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + `movies/director/${director}`, {
       headers: new HttpHeaders({
@@ -71,7 +71,7 @@ login(userDetails: any): Observable<any> {
   }
 
     // Get Genre
-    getGenre(genre: string): Observable<any> {
+    getGenreService(genre: string): Observable<any> {
       const token = localStorage.getItem('token');
       return this.http.get(apiUrl + `movies/genre/${genre}`, {
         headers: new HttpHeaders({
@@ -83,7 +83,7 @@ login(userDetails: any): Observable<any> {
       );
     }
     // Add favorite movies
-  addFavoriteMovie(movieId: string, username: string): Observable<any> {
+  addFavoriteMovieService(movieId: string, username: string): Observable<any> {
     const token = localStorage.getItem('token');
 
     return this.http.post(apiUrl + `users/${username}/movies/${movieId}`, {}, {
@@ -96,7 +96,7 @@ login(userDetails: any): Observable<any> {
     );
   }
   // Edit user
-  editUser(updatedUser: any): Observable<any> {
+  editUserService(updatedUser: any): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
     return this.http.put(apiUrl + `users/${user._id}`, updatedUser, {
@@ -110,7 +110,7 @@ login(userDetails: any): Observable<any> {
   }
 
   // Delete user
-  deleteUser(): Observable<any> {
+  deleteUserService(): Observable<any> {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
     return this.http.delete(apiUrl + `users/${user.Username}`, {
@@ -123,7 +123,7 @@ login(userDetails: any): Observable<any> {
   }
 
   // Delete movie from Favs list
-  deleteFavoriteMovie(movieId: string, username: string): Observable<any> {
+  deleteFavoriteMovieService(movieId: string, username: string): Observable<any> {
     const token = localStorage.getItem('token');
 
     return this.http.delete(apiUrl + `users/${username}/movies/${movieId}`, {
