@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 
 @Component({
   selector: 'app-root',
@@ -18,5 +19,10 @@ openUserRegistrationDialog(): void {
 // Assigning the dialog a width
     width: '280px'
     });
+  }
+  OpenSignInDialog(): void {
+    this.dialog.open(SignInFormComponent, {
+      width: "280px"
+    })
   }
 }
