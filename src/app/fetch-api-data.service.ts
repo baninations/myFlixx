@@ -11,13 +11,13 @@ const apiUrl = 'https://movies-flix-al-f68cdd84f041.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
-export class FetchAPIDataService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
   }
  // Making the api call for the user registration endpoint
-  public FetchAPIDataService(userDetails: any): Observable<any> {
+  public registerUser(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
