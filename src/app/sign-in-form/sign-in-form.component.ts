@@ -31,13 +31,13 @@ userLogin(): void {
 
     console.log("User is: ", getUser)
     console.log("Token is: ", getToken)
-// Logic for a successful user registration goes here! (To be implemented)
+// Logic for a successful user login goes here!
    this.dialogRef.close(); // This will close the modal on success!
-   this.snackBar.open(result, 'OK', {
+   this.snackBar.open("Logged in successfully", 'OK', {
       duration: 2000
    });
   }, (result) => {
-    this.snackBar.open(result, 'OK', {
+    this.snackBar.open("Log in failed", 'OK', {
       duration: 2000
     });
   });
