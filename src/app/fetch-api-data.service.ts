@@ -32,25 +32,30 @@ userLogin(userDetails: any): Observable<any> {
   )
 };
 
+
+
 // Gets all movies
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
+    console.log("This token is being sent", token)
+    console.log("Does this go:   ")
     return this.http.get(apiUrl + 'movies', {
       headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+        Authorization: `Bearer ${token}`
       })
     }).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
-
   // Get one movie
   getMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + `movies/${title}`, {
       headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json', // Specifies the content type of the request body
+        Accept: 'application/json'          // Specifies the format the server should use for the response
       })
     }).pipe(
       map(this.extractResponseData),
