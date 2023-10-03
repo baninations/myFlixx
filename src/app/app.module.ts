@@ -22,6 +22,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+
+
+
+
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -38,6 +44,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     MovieDetailsComponent,
     NavigationBarComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +59,9 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
