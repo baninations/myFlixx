@@ -21,6 +21,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     SignInFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
