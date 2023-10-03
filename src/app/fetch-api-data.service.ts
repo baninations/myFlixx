@@ -11,13 +11,13 @@ const apiUrl = 'https://movies-flix-al-f68cdd84f041.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
-export class UserRegistrationService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
   }
  // Making the api call for the user registration endpoint
-  public userRegistration(userDetails: any): Observable<any> {
+  public registerUser(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
@@ -25,32 +25,37 @@ export class UserRegistrationService {
   }
 
 // Log in
-login(userDetails: any): Observable<any> {
+userLogin(userDetails: any): Observable<any> {
   console.log(userDetails)
-  return this.http.post(apiUrl + "login" + new URLSearchParams(userDetails), {}).pipe(
+  return this.http.post(apiUrl + "login?" + new URLSearchParams(userDetails), {}).pipe(
     catchError(this.handleError)
   )
 };
 
+
+
 // Gets all movies
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
+    console.log("This token is being sent", token)
+    console.log("Does this go:   ")
     return this.http.get(apiUrl + 'movies', {
       headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+        Authorization: `Bearer ${token}`
       })
     }).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
-
   // Get one movie
   getMovie(title: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + `movies/${title}`, {
       headers: new HttpHeaders({
-        Authorization: 'Bearer ' + token,
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json', // Specifies the content type of the request body
+        Accept: 'application/json'          // Specifies the format the server should use for the response
       })
     }).pipe(
       map(this.extractResponseData),
@@ -132,6 +137,32 @@ login(userDetails: any): Observable<any> {
       })
     }).pipe(
       map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
+  // Get user
+  getUser(userId: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + `users/${userId}`, {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + token,
+      })
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+
+  getFavoriteMovies(userId: string): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + `users/${userId}`, {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + token,
+      })
+    }).pipe(
+      map(this.extractResponseData),
+      map((data) => data.FavoriteMovies),
       catchError(this.handleError)
     );
   }
