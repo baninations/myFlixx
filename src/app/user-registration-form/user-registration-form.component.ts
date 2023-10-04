@@ -37,13 +37,11 @@ registerUser(): void {
     this.fetchApiData.registerUser(this.userData).subscribe((result) => {
   // Logic for a successful user registration goes here! (To be implemented)
      this.dialogRef.close(); // This will close the modal on success!
-     console.log(result)
      this.snackBar.open("Signed up successfully", 'OK', {
         duration: 2000
      });
 
     }, (result) => {
-      console.log(result)
       this.snackBar.open("Failed to Sign up", 'OK', {
         duration: 2000
       });

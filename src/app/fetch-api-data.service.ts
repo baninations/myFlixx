@@ -18,7 +18,6 @@ export class FetchApiDataService {
   }
  // Making the api call for the user registration endpoint
   public registerUser(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
     catchError(this.handleError)
     );
@@ -26,7 +25,6 @@ export class FetchApiDataService {
 
 // Log in
 userLogin(userDetails: any): Observable<any> {
-  console.log(userDetails)
   return this.http.post(apiUrl + "login?" + new URLSearchParams(userDetails), {}).pipe(
     catchError(this.handleError)
   )
@@ -37,8 +35,7 @@ userLogin(userDetails: any): Observable<any> {
 // Gets all movies
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
-    console.log("This token is being sent", token)
-    console.log("Does this go:   ")
+
     return this.http.get(apiUrl + 'movies', {
       headers: new HttpHeaders({
         Authorization: `Bearer ${token}`

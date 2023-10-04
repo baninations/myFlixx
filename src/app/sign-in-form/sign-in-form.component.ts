@@ -27,7 +27,6 @@ export class SignInFormComponent {
 //This is the function responsible for sending the form inputs to the backend
 userLogin(): void {
   this.fetchApiData.userLogin(this.userData).subscribe((result) => {
-    console.log(result)
     localStorage.setItem("user",JSON.stringify(result.user))
     // localStorage.setItem("username", JSON.stringify(result.user.Username))
     localStorage.setItem("username", JSON.stringify(result.user.Username))
@@ -38,8 +37,6 @@ userLogin(): void {
     const getUser = localStorage.getItem("user")
     const getToken = localStorage.getItem("token")
 
-    console.log("User is: ", getUser)
-    console.log("Token is: ", getToken)
 // Logic for a successful user login goes here!
    this.dialogRef.close(); // This will close the modal on success!
    this.snackBar.open("Logged in successfully", 'OK', {
