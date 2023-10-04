@@ -1,14 +1,87 @@
-.profile {
-    padding: 26px;
-  }
+.profile{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    color: #d87093;
+}
+
+.info {
+    width: 50%;
+    max-width: 50%;
+    // border: 2px solid red;
+    margin: 100px;
+
+}
+
+.mat-card {
+    display: flex;
+    margin-top: 100px;
+    // justify-content: center;
+    // align-items: center;
+    width: 50%;
+    max-width: 50%;
+    // border: 2px solid red;
+    background-color: #0b2528;
+
+}
+
+.mat-form-field {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    // border: 2px solid red;
+}
+
+// input {
+//     width: 300px;
+    
+// }
+
+
+
+
+
+
+
+
+// // .profile {
+// //     height: 100vh;
+// //     padding: 26px;
+// //     background-color: #0b2528;
+// //   }
   
-  .grid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-  }
-  
-  .profile-form {
-    mat-form-field {
-      width: 100%;
-    }
-  }
+// //   .grid {
+// //     display: grid;
+// //     grid-template-columns: 90% 10%;
+// //     background-color: #0b2528;
+
+// //   }
+
+//   .profile-form {
+//    display: flex;
+//    flex-direction: column;
+//    width: 250px;
+//    background-color: #0b2528;
+//    border: 1px solid red;
+//   }
+
+// //   .mat-form-field{
+// //     background-color: #0b2528;
+// //   }
+// //   .profile-form {
+// //     background-color: #0b2528;
+// //     mat-form-field {
+// //         background-color: #0b2528;
+// //         color: #0b2528;
+// //       width: 100%;
+// //     }
+// //   }
+
+//   p{
+//     color: #d87093;
+//   }
+
+//   h1{
+//     color: #d87093
+//   }

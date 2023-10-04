@@ -95,7 +95,7 @@ userLogin(userDetails: any): Observable<any> {
     user.FavoriteMovies.push(movieId);
     localStorage.setItem('user', JSON.stringify(user));
     
-    return this.http.put(apiUrl + `users/${user.Username}/movie/${movieId}`, {}, {
+    return this.http.post(apiUrl + `users/${user.Username}/movies/${movieId}`, {}, {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
         Authorization: 'Bearer ' + token,

@@ -1,10 +1,11 @@
 <mat-toolbar class="navbar">
     <a routerLink="/movies">
-        <h2 style="margin-right: 10px;">myFlix App</h2>
+        <!-- <h2 style="margin-right: 10px;">myFlix App</h2> -->
+        <img class="logo" src="../../assets/myFlixLogo.png" alt="Logo">
     </a>
-    <span class="example-spacer"></span>
-    <a routerLink="/profile">Profile</a>
-    <button mat-icon-button aria-label="Logout" (click)="logoutUser()">
-        <mat-icon>exit_to_app</mat-icon>
-    </button>
+    <!-- <span class="example-spacer"></span> -->
+    <div class="icons">
+        <a routerLink="/profile"><mat-icon color="accent">account_circle</mat-icon></a>
+        <a routerLink="" (click)="logoutUser()"><mat-icon color="accent">exit_to_app</mat-icon></a>
+    </div>
 </mat-toolbar>

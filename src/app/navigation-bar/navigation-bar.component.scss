@@ -2,8 +2,18 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    background-color: #1a3939;
+    display: flex;
+    justify-content: space-between;
   }
-  
-  .example-spacer {
-    flex: 1 1 auto;
+  .icons{
+    width: 75px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
   }
