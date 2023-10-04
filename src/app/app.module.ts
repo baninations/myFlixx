@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -32,6 +33,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     MovieDetailsComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    ProfileComponent
     
   ],
   imports: [

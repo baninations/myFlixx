@@ -28,7 +28,8 @@ export class SignInFormComponent {
 userLogin(): void {
   this.fetchApiData.userLogin(this.userData).subscribe((result) => {
     console.log(result)
-    localStorage.setItem("user", result.user)
+    localStorage.setItem("user",JSON.stringify(result.user))
+    // localStorage.setItem("username", JSON.stringify(result.user.Username))
     localStorage.setItem("username", JSON.stringify(result.user.Username))
     localStorage.setItem("token", result.token)
     this.router.navigate(['movies']);
