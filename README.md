@@ -2,6 +2,27 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
 
+## Description
+
+The myFlix Angular App is a single-page, responsive movie application built using Angular. It allows users to access information about movies, directors, and genres. Users can create profiles to save data about their favorite movies. This app is designed to facilitate user requests and render responses from the server-side via various interface views.
+
+## Key Features
+
+- Welcome view for user authentication (login or registration).
+- Display all movies once authenticated.
+- Single movie view with additional features:
+  - View details about the director of the movie.
+  - View details about the genre of the movie.
+
+## Technical Requirements
+
+- Written in Angular (version 9 or later).
+- Requires Node.js and npm.
+- Designed using Angular Material.
+- Contains code comments using Typedoc.
+- Includes technical documentation using JSDoc.
+- Hosted on GitHub Pages.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
