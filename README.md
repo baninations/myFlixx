@@ -6,6 +6,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The myFlix Angular App is a single-page, responsive movie application built using Angular. It allows users to access information about movies, directors, and genres. Users can create profiles to save data about their favorite movies. This app is designed to facilitate user requests and render responses from the server-side via various interface views.
 
+## Live
+- https://baninations.github.io/myFlixx/welcome
+
+## Technologies
+- Typescript
+- Angular
+- Angular CLI
+- Data binding
+- Interpolation
+- Angular Form
+- Material Design
+- TypeDoc
+- GH-Pages
+
 ## Key Features
 
 - Welcome view for user authentication (login or registration).
@@ -46,3 +60,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Screenshots
+
+ ![Desktop](https://github.com/baninations/myFlixx/blob/main/screenshots/Desktop.png)
+
+![Mobile](https://github.com/baninations/myFlixx/blob/main/screenshots/Mobile.png)
