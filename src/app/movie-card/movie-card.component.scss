@@ -1,3 +1,12 @@
+body {
+    // text-align: center;
+    // display: flex;
+    // justify-content: center; /* Horizontal centering */
+    // align-items: center; /* Vertical centering */
+    // height: 100vh; /* Make sure the body takes up at least the viewport height */
+    // margin: 0; /* Remove default margin to prevent unwanted spacing */
+    // background-color: #0b2528; /* Set the background color */
+}
 
 .grid-container {
     display: grid;
@@ -47,4 +56,13 @@
 
 .link-text {
     
+}
+
+@media (max-width: 619px) {
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 }

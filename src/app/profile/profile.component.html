@@ -1,10 +1,8 @@
 <div class="profile">
-    <div class="info">
-        <h1>Your Profile</h1>
-        <div class="grid">
-            <p>Username: {{ user.Username }}</p>
-            <p>Email: {{ user.Email }}</p>
-        </div>
+    <h1>Your Profile</h1>
+    <div class="grid">
+        <p>Username: {{ user.Username }}</p>
+        <p>Email: {{ user.Email }}</p>
     </div>
     <mat-card class="mat-card">
         <h1>Edit Profile Info</h1>
@@ -22,11 +20,14 @@
                     <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
                 </mat-form-field>
                 <mat-card-actions>
-                    <button mat-raised-button (click)="updateUser()" color="primary">
+                    <button class="mat-form-button" mat-raised-button (click)="updateUser()" color="accent">
                         Update User
                     </button>
                 </mat-card-actions>
             </form>
         </mat-card-content>
     </mat-card>
+    <div class="info">
+
+    </div>
 </div>
